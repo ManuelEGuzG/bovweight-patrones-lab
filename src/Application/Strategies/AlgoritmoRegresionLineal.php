@@ -7,13 +7,7 @@ namespace BovWeight\Lab\Application\Strategies;
 use BovWeight\Lab\Domain\Estimacion\IAlgoritmoEstimacion;
 use BovWeight\Lab\Domain\Estimacion\ResultadoEstimacion;
 
-/**
- * ConcreteStrategy: estimación por regresión lineal sobre medidas
- * morfométricas (perímetro torácico, longitud corporal).
- *
- * No requiere internet -> útil en potreros sin señal.
- * Menos preciso que YOLOv8 pero más que la tabla de referencia.
- */
+
 final class AlgoritmoRegresionLineal implements IAlgoritmoEstimacion
 {
     public function estaDisponible(): bool

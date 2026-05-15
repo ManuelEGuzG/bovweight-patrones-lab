@@ -8,12 +8,7 @@ use BovWeight\Lab\Domain\Estimacion\IAlgoritmoEstimacion;
 use BovWeight\Lab\Domain\Estimacion\ResultadoEstimacion;
 use RuntimeException;
 
-/**
- * ConcreteStrategy: estimación basada en el modelo YOLOv8.
- *
- * Simula una llamada HTTP a un servicio de visión por computadora.
- * Es el método más preciso pero requiere conexión a internet.
- */
+
 final class AlgoritmoYolov8 implements IAlgoritmoEstimacion
 {
     public function __construct(private readonly bool $hayConexionInternet = true)
@@ -37,7 +32,7 @@ final class AlgoritmoYolov8 implements IAlgoritmoEstimacion
         $pixelesLargo = (int) ($datosEntrada['pixeles_largo'] ?? 0);
         $factorRaza   = (float) ($datosEntrada['factor_raza'] ?? 1.0);
 
-        // Fórmula simulada: el modelo real devolvería un peso vía API.
+        
         $peso = ($pixelesLargo * 0.85) * $factorRaza;
 
         return new ResultadoEstimacion(
