@@ -6,13 +6,7 @@ namespace BovWeight\Lab\Domain\RegistroPeso;
 
 use DateTimeImmutable;
 
-/**
- * Entidad RegistroPeso.
- *
- * Representa un pesaje realizado a un animal. Cada vez que se crea uno,
- * múltiples subsistemas deben reaccionar (notificación, dashboard,
- * recálculo ICC, webhook SENASA). De ahí la necesidad del patrón Observer.
- */
+
 final class RegistroPeso
 {
     public function __construct(

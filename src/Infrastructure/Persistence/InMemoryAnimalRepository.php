@@ -7,17 +7,7 @@ namespace BovWeight\Lab\Infrastructure\Persistence;
 use BovWeight\Lab\Domain\Animal\Animal;
 use BovWeight\Lab\Domain\Animal\IAnimalRepository;
 
-/**
- * In-Memory Repository.
- *
- * Implementación pensada exclusivamente para PRUEBAS UNITARIAS.
- * No toca BD: usa un array privado. Permite que ReporteServiceTest,
- * EstimadorServiceTest, etc. corran en milisegundos sin necesidad
- * de migrar BD ni levantar contenedores.
- *
- * Esta es una de las ventajas principales del patrón Repository
- * mencionadas por Fowler.
- */
+
 final class InMemoryAnimalRepository implements IAnimalRepository
 {
     /** @var array<string, Animal> */
@@ -46,9 +36,7 @@ final class InMemoryAnimalRepository implements IAnimalRepository
         unset($this->animales[$arete]);
     }
 
-    /**
-     * Método auxiliar exclusivo para tests: cuenta animales almacenados.
-     */
+    
     public function count(): int
     {
         return count($this->animales);

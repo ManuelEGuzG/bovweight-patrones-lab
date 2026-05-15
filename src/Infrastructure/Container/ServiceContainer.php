@@ -7,17 +7,7 @@ namespace BovWeight\Lab\Infrastructure\Container;
 use Closure;
 use RuntimeException;
 
-/**
- * Service Container minimalista al estilo Laravel.
- *
- * Permite registrar bindings (interfaz -> implementación) y singletons.
- * En el proyecto Laravel real, esto es app() / $this->app->bind().
- *
- * Para el laboratorio, encapsula los bindings que pide cada patrón:
- *   - IRazaFactory          -> RazaFactory (singleton)
- *   - IAnimalRepository     -> EloquentAnimalRepository
- *   - IAlgoritmoEstimacion  -> AlgoritmoYolov8 (por defecto)
- */
+
 final class ServiceContainer
 {
     /** @var array<string, Closure> */

@@ -12,12 +12,7 @@ use BovWeight\Lab\Domain\Raza\RazaFactory;
 use BovWeight\Lab\Domain\RegistroPeso\RegistroPesoSubject;
 use BovWeight\Lab\Infrastructure\Persistence\EloquentAnimalRepository;
 
-/**
- * ServiceProvider equivalente al AppServiceProvider de Laravel.
- *
- * Centraliza el "cableado" (wiring) de los patrones para que el código
- * cliente reciba dependencias por inyección, no las cree con `new`.
- */
+
 final class ServiceProvider
 {
     public static function register(ServiceContainer $c): void

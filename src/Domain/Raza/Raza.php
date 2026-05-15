@@ -4,12 +4,7 @@ declare(strict_types=1);
 
 namespace BovWeight\Lab\Domain\Raza;
 
-/**
- * Product (abstracción) en el patrón Factory Method.
- *
- * Clase abstracta que representa una raza bovina del programa de mejoramiento
- * genético de SENASA. Cada raza tiene un factor de ajuste de peso distinto.
- */
+
 abstract class Raza
 {
     public function __construct(

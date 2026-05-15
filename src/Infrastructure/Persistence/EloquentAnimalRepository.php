@@ -8,23 +8,10 @@ use BovWeight\Lab\Domain\Animal\Animal;
 use BovWeight\Lab\Domain\Animal\IAnimalRepository;
 use BovWeight\Lab\Domain\Raza\IRazaFactory;
 
-/**
- * Concrete Repository (Eloquent).
- *
- * En el proyecto Laravel real, esta clase usaría \App\Models\Animal::where(...)
- * y la lógica del ORM. Aquí simulamos esa interacción con un array para
- * mantener el laboratorio ejecutable sin BD.
- *
- * Lo importante es la FORMA: el resto del sistema NO conoce esta clase,
- * solo conoce IAnimalRepository. Por eso podemos sustituirla por
- * DoctrineAnimalRepository o InMemoryAnimalRepository sin tocar el dominio.
- */
+
 final class EloquentAnimalRepository implements IAnimalRepository
 {
-    /**
-     * Simulamos la tabla `animales` de la BD.
-     * @var array<string, array{arete:string, raza:string, rancho_id:int, nombre:?string}>
-     */
+    
     private array $tablaSimulada = [];
 
     public function __construct(private readonly IRazaFactory $razaFactory)
@@ -39,7 +26,7 @@ final class EloquentAnimalRepository implements IAnimalRepository
 
     public function findByArete(string $arete): ?Animal
     {
-        // Equivalente Eloquent: Animal::where('arete', $arete)->first()
+       
         if (!isset($this->tablaSimulada[$arete])) {
             return null;
         }
@@ -48,8 +35,7 @@ final class EloquentAnimalRepository implements IAnimalRepository
 
     public function findAllByRancho(int $ranchoId): array
     {
-        // Equivalente Eloquent:
-        //   Animal::where('rancho_id', $ranchoId)->with('registrosPeso')->get()
+        
         $resultado = [];
         foreach ($this->tablaSimulada as $fila) {
             if ($fila['rancho_id'] === $ranchoId) {
@@ -75,9 +61,7 @@ final class EloquentAnimalRepository implements IAnimalRepository
         unset($this->tablaSimulada[$arete]);
     }
 
-    /**
-     * Reconstruye la entidad de dominio desde una fila de la BD.
-     */
+    
     private function hidratar(array $fila): Animal
     {
         return new Animal(

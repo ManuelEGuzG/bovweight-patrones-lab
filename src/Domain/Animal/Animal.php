@@ -7,12 +7,7 @@ namespace BovWeight\Lab\Domain\Animal;
 use BovWeight\Lab\Domain\Raza\Raza;
 use BovWeight\Lab\Domain\RegistroPeso\RegistroPeso;
 
-/**
- * Entidad de dominio Animal.
- *
- * Identificada por el número de arete que pide SENASA, según lo expresado
- * por Don Iván Chavarría en la entrevista de levantamiento.
- */
+
 final class Animal
 {
     /** @var RegistroPeso[] */
