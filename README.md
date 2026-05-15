@@ -3,6 +3,7 @@
 **Curso:** IF7100 — Ingeniería del Software I
 **Sede:** UCR — Sede de Guanacaste, Recinto de Liberia
 **Docente:** Lic. Alonso Chavarría Cubero
+**Estudiantes:** Naillel David Bermudez Romero & Manuel Esteban Guzman Gomez
 **Tipo:** Rama alterna de práctica (independiente del proyecto principal)
 
 Este repositorio contiene la implementación de los cuatro patrones de diseño
